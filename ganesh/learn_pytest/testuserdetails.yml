@@ -4,15 +4,14 @@ info:
   seq: 1
 
 http:
-  method: GET
-  url: http://localhost:8000/user
+  method: POST
+  url: http://localhost:8000/user/create_details/1
   body:
     type: json
     data: |-
       {
-        "id":1,
         "name":"ganesh",
-        "location":"bangalore"
+        "mail_id":"ganesh@gamil.com"
       }
   auth: inherit
 

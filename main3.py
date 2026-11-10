@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, FastAPI
 from pydantic import BaseModel
 
 
@@ -18,6 +18,9 @@ router = APIRouter(
 
 users: dict[int, User] = {}
 
+app = FastAPI()
+
+app.include_router(router)
 
 @router.post(
     "/create_details/{user_id}",
